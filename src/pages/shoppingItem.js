@@ -1,10 +1,10 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import Button from '../components/Button'
+import React from "react";
+import Link from "gatsby-link";
+import Button from "../../packages/shared-ui";
 
-export default ({ pathContext: { data }}) => {
+export default ({ pathContext: { data } }) => {
   if (!data) {
-    return null
+    return null;
   }
 
   return (
@@ -12,7 +12,7 @@ export default ({ pathContext: { data }}) => {
       <h1>{data.title}</h1>
       <p>{data.content}</p>
       <Button>Purchase</Button>
-      <Link to="/">Back to Shop</Link>
+      <Link to='/'>Back to Shop</Link>
     </div>
-  )
-}
+  );
+};

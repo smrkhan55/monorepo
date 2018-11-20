@@ -1,22 +1,25 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import { ItemCard, ItemCardWrapper } from '../components/ItemCard'
+import React from "react";
+import Link from "gatsby-link";
+import { ItemCard, ItemCardWrapper } from "../../packages/shared-ui/ItemCard";
 
 const BlogPage = ({ data }) => {
-  const edges = data.allBlogJson.edges
+  const edges = data.allBlogJson.edges;
 
   return (
     <div>
       <h1>Blog Page</h1>
       <ItemCardWrapper>
-        {edges && edges.map(edge => <ItemCard key={edge.node.id} data={edge.node} slug="post" />)}
+        {edges &&
+          edges.map(edge => (
+            <ItemCard key={edge.node.id} data={edge.node} slug='post' />
+          ))}
       </ItemCardWrapper>
-      <Link to="/">Go back to the shop</Link>
+      <Link to='/'>Go back to the shop</Link>
     </div>
-  )
-}
+  );
+};
 
-export default BlogPage
+export default BlogPage;
 
 export const query = graphql`
   query BlogPostsQuery {
@@ -29,4 +32,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
